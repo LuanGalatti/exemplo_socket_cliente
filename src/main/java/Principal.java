@@ -9,12 +9,10 @@ public class Principal {
         try {
             String ip = JOptionPane.showInputDialog("Digite o ip com qual quer conectar");
             Socket servidor = new Socket(ip, 4444);//endereco e porta
-            PrintWriter out = new PrintWriter(
-                    servidor.getOutputStream(), true);
+            PrintWriter out = new PrintWriter(servidor.getOutputStream(), true);
             String mensagem = "";
             while (!mensagem.equals("fim")) {
-                mensagem = JOptionPane.
-                        showInputDialog("Digite a Mensagem ou fim para sair");
+                mensagem = JOptionPane.showInputDialog("Digite a Mensagem ou fim para sair");
                 out.println(mensagem); //escreve a mensagem
             }
         } catch (IOException io) {
