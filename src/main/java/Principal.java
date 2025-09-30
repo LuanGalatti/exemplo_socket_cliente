@@ -7,7 +7,8 @@ public class Principal {
 
     public static void main(String args[]) {
         try {
-            Socket servidor = new Socket("localhost", 4444);//endereco e porta
+            String ip = JOptionPane.showInputDialog("Digite o ip com qual quer conectar");
+            Socket servidor = new Socket(ip, 4444);//endereco e porta
             PrintWriter out = new PrintWriter(
                     servidor.getOutputStream(), true);
             String mensagem = "";
